@@ -1,0 +1,267 @@
+# Movement hypothesis:
+# 1 - Full Markovian process (movement to all areas); 2 - Movement to adjacent areas only; 3 - Movement to adjacent areas only (clockwise gyre);
+2
+
+# Catchability hypothesis:
+# 1 - Fishery-specific catchabilities except for:
+  # Fishery 14 (Japan MED): share catchability with fishery 12 (Japan NE)
+  # Fishery 18 (Venez SE): share catchability with fishery 17 (Venez SE)
+# 2 - Aggregate catchabilities by nation/area
+1
+
+# Tag reporting hypothesis:
+# 1 - Average reporting rate for all fleets; 2 - FISHERY-specific reporting rates; 3 - FLEET-specific reporting rates
+2
+
+# Likelihood type
+# 1 - Sum of squares; 2 - Poisson; ; 3 - Negative binomial
+3
+
+# Poisson likelihood additive constant
+.0001
+
+# Tau (overdispersion) hypothesis:
+# 1 - Average overdispersion parameter for all fisheries; 2 - FISHERY-specific overdispersion parameters; 3 - FLEET-specific reporting rates
+1
+
+# Parameter controls
+# LO HI INIT PHASE
+0.1	0.5	0.21	-2	#	Natural	mortality	
+0	1	0	-3	#	Tag	induced	mortality
+0	1	0.105360516 -3	#	Tag	loss	
+0	10	1  -5	#	Fscales		
+
+# Movement parameter controls - H1
+# Movement hypothesis 1 - Full Markovian model, movement to all areas (mov. parameters: 20 estimable, 5 derived quantities)
+# LO HI INIT PHASE
+0	1	0.1	2 # 1
+0	1	0.1	2 # 2
+0	1	0.1	2 # 3	
+0	1	0	-2 # 4
+0	1	0.1	2 # 5
+0	1	0.1	2 # 6
+0	1	0.1	2 # 7
+0	1	0	-2 # 8
+0	1	0.1	2 # 9
+0	1	0.1	2 # 10
+0	1	0.1	2 # 11
+0	1	0	-2 # 12
+0	1	0.1	2 # 13
+0	1	0.1	2 # 14
+0	1	0.1	2 # 14
+0	1	0	-2 # 16
+0	1	0	-2 # 17
+0	1	0	-2 # 18
+0	1	0	-2 # 19
+0	1	0	-2 # 20
+
+# Movement parameter controls - H2
+# Movement hypothesis 2 - Reduced model, movement to adjacent areas (mov. parameters: 10 estimable, 5 derived quantities)
+# LO HI INIT PHASE
+0	1	0.1	2 # 1
+0	1	0.1	2 # 2
+0	1	0.1	2 # 3
+0	1	0.1	2 # 4
+0	1	0.1	2 # 5
+0	1	0.1	2 # 6
+0	1	0	-2 # 7
+0	1	0.1	2 # 8
+0	1	0.1	2 # 9
+0	1	0	-2 # 10
+
+# Movement parameter controls - H3
+# Movement hypothesis 3 - Reduced model, movement to adjacent areas, clowise gyre (mov. parameters: 6 estimable, 5 derived quantities)
+# LO HI INIT PHASE
+0	1	0.1	2 # 1
+0	1	0.1	2 # 2
+0	1	0.1	2 # 3
+0	1	0	-2 # 4
+0	1	0.1	2 # 5
+0	1	0	-2 # 6
+
+# Catchability controls - Hypothesis 1 (25 catchabilites)
+# LO HI INIT PHASE
+-50	0	-10	1	# 1 - NA_sport_NWNA (f1)		
+-50	0	-10	1	# 2 - US_comm_NWNA (f2)		
+-50	0	-10	1	# 3 - US_comm_SWNA (f3)		
+-50	0	-10	1	# 4 - Canada_comm_NWNA (f4)		
+-50	0	-10	1	# 5 - Spain_comm_NWNA (f5)		
+-50	0	-10	1	# 6 - Spain_comm_SWNA (f6)		
+-50	0	-10	1	# 7 - Spain_comm_NENA (f7)		
+-50	0	-10	1	# 8 - Spain_comm_SENA (f8)		
+-50	0	-10	1	# 9 - Spain_comm_MED (f9)		
+-50	0	-10	1	# 10 - Japan_comm_NWNA (f10)		
+-50	0	-10	1	# 11 - Japan_comm_SWNA (f11)		
+-50	0	-10	1	# 12 - Japan_comm_NENA (f12); Japan_comm_MED (f14) 		
+-50	0	-10	1	# 13 - Japan_comm_SENA (f13)		
+-50	0	-10	1	# 14 - Portugal_comm_NWNA (f15)		
+-50	0	-10	1	# 15 - Portugal_comm_NENA (f16)		
+-50	0	-10	1	# 16 - Venezuela_comm_SWNA (f17); Venezuela_comm_SENA (f18)		
+-50	0	-10	1	# 17 - US_sci - NWNA (f19)		
+-50	0	-10	1	# 18 - Pooled_sport_SWNA (f20)		
+-50	0	-10	1	# 19 - Pooled_sport_NENA (f21)		
+-50	0	-10	1	# 20 - Pooled_sport_MED (f22)		
+-50	0	-10	1	# 21 - Pooled_comm_NWNA (f23)		
+-50	0	-10	1	# 22 - Pooled_comm_SWNA (f24)		
+-50	0	-10	1	# 23 - Pooled_comm_NENA (f25)		
+-50	0	-10	1	# 24 - Pooled_comm_SENA (f26)		
+-50	0	-10	1	# 25 - Pooled_comm_MED (f27)		
+
+# Catchability controls - Hypothesis 2 (14 catchabilites)
+# LO HI INIT PHASE
+-50	0	-10	1 # 1
+-50	0	-10	1 # 2
+-50	0	-10	1 # 3
+-50	0	-10	1 # 4
+-50	0	-10	1 # 5
+-50	0	-10	1 # 6
+-50	0	-10	1 # 7
+-50	0	-10	1 # 8
+-50	0	-10	1 # 9
+-50	0	-10	1 # 10
+-50	0	-10	1 # 11
+-50	0	-10	1 # 12
+-50	0	-10	1 # 13
+-50	0	-10	1 # 14
+
+# Tag reporting rate controls - Hypothesis 1
+# LO HI INIT PHASE
+0	1	1 -4
+
+# Tag reporting rate controls - Hypothesis 2
+# LO HI INIT PHASE
+0	1	1	-4	# 1 - NA_sport_NWNA
+0	1	1	-4	# 2 - US_comm_NWNA
+0	1	1	-4	# 3 - US_comm_SWNA
+0	1	1	-4	# 4 - Canada_comm_NWNA
+0	1	.5	-4	# 5 - Spain_comm_NWNA
+0	1	.5	-4	# 6 - Spain_comm_SWNA
+0	1	.5	-4	# 7 - Spain_comm_NENA
+0	1	.5	-4	# 8 - Spain_comm_SENA
+0	1	.5	-4	# 9 - Spain_comm_MED
+0	1	.2	-4	# 10 - Japan_comm_NWNA
+0	1	.2	-4	# 11 - Japan_comm_SWNA
+0	1	.2	-4	# 12 - Japan_comm_NENA
+0	1	.2	-4	# 13 - Japan_comm_SENA
+0	1	0	-4	# 14 - Japan_comm_MED				NO RECAPS
+0	1	1	-4	# 15 - Portugal_comm_NWNA
+0	1	1	-4	# 16 - Portugal_comm_NENA
+0	1	.2s	-4	# 17 - Venezuela_comm_SWNA
+0	1	0	-4	# 18 - Venezuela_comm_SENA			NO RECAPS
+0	1	1	-4	# 19 - US_sci - NWNA
+0	1	1	-4	# 20 - Pooled_sport_SWNA
+0	1	1	-4	# 21 - Pooled_sport_NENA
+0	1	1	-4	# 22 - Pooled_sport_MED
+0	1	1	-4	# 23 - Pooled_comm_NWNA
+0	1	1	-4	# 24 - Pooled_comm_SWNA
+0	1	1	-4	# 25 - Pooled_comm_NENA
+0	1	1	-4	# 26 - Pooled_comm_SENA
+0	1	1	-4	# 27 - Pooled_comm_MED
+
+# Tag reporting rate controls - Hypothesis 3			
+# LO HI INIT PHASE			
+0	1	1	-4	# 1
+0	1	1	-4	# 2
+0	1	1	-4	# 3
+0	1	1	-4	# 4
+0	1	1	-4	# 5
+0	1	1	-4	# 6
+0	1	1	-4	# 7
+0	1	1	-4	# 8
+0	1	1	-4	# 9
+0	1	1	-4	# 10
+0	1	1	-4	# 11
+0	1	1	-4	# 12
+0	1	1	-4	# 13
+0	1	1	-4	# 14
+0	1	1	-4	# 15
+0	1	1	-4	# 16
+
+# Effort deviate controls							
+# firstYear	lastYear	LO	HI	INIT	SD	PH	
+1965	2004	-10	10	0	0.4	3	# 1	- NA_sport_NWNA:
+1967	2004	-10	10	0	0.4	3	# 2	- US_comm_NWNA:
+1990	2000	-10	10	0	1	3	# 3	- US_comm_SWNA:		irregular effort
+1966	2004	-10	10	0	1	3	# 4	- Canada_comm_NWNA: No data, unifirom f trend adopted	
+1985	2004	-10	10	0	0.4 3	# 5	- Spain_comm_NWNA: 	
+1993	2003	-10	10	0	0.4 3	# 6	- Spain_comm_SWNA: 	good correlation f-recap
+1978	2004	-10	10	0	0.4	3	# 7	- Spain_comm_NENA: 	opposite trend f-recap, begins 1990! 
+1981	2004	-10	10	0	0.4	3	# 8	- Spain_comm_SENA: 	very consistent trend f-recap, begins 1995	
+1971	1986	-10	10	0	0.4	3	# 9	- Spain_comm_MED: 	Likely two stanzas of reporting
+1966	2004	-10	10	0	0.4	3	# 10 - Japan_comm_NWNA: Small pulses of low sample sizes
+1978	1998	-10	10	0	0.4	3	# 11 - Japan_comm_SWNA: Small pulses of low sample sizes
+1994	2001	-10	10	0	0.4	3	# 12 - Japan_comm_NENA: Small pulses of low sample sizes	
+1980	2000	-10	10	0	0.4	3	# 13 - Japan_comm_SENA: Small pulses of low sample sizes	
+1962	2004	-10	10	0	0.4	-3	# 14 - Japan_comm_MED: 	NO RECAPs									TURN OFF	
+1996	1999	-10	10	0	1	3	# 15 - Portugal_comm_NWNA:	
+1988	2004	-10	10	0	1	3	# 16 - Portugal_comm_NENA:	
+1984	2002	-10	10	0	1	3	# 17 - Venezuela_comm_SWNA: Likely two stanzas of reporting	
+1962	2004	-10	10	0	1	-3	# 18 - Venezuela_comm_SENA: NO RECAPS								TURN OFF
+1977	2004	-10	10	0	1	3	# 19 - US_sci - NWNA:	
+1978	2002	-10	10	0	1	3	# 20 - Pooled_sport_SWNA:	
+1985	2004	-10	10	0	1	3	# 21 - Pooled_sport_NENA:	
+1976	1994	-10	10	0	1	3	# 22 - Pooled_sport_MED:
+1966	2003	-10	10	0	1	3	# 23 - Pooled_comm_NWNA:
+1969	2004	-10	10	0	1	3	# 24 - Pooled_comm_SWNA:
+1975	2004	-10	10	0	1	3	# 25 - Pooled_comm_NENA:
+1974	2000	-10	10	0	1	3	# 26 - Pooled_comm_SENA:
+1976	1996	-10	10	0	1	3	# 27 - Pooled_comm_MED:
+
+# Tau (overdispersion) controls - Hypothesis 2				
+# LO HI INIT PHASE				
+1	100	1.5 6
+
+# Tau (overdispersion) controls - Hypothesis 2				
+# LO HI INIT PHASE				
+1	100	1.5	6	# 1 - NA_sport_NWNA
+1	100	1.5	6	# 2 - US_comm_NWNA
+1	100	1.5	6	# 3 - US_comm_SWNA
+1	100	1.5	6	# 4 - Canada_comm_NWNA
+1	100	1.5	6	# 5 - Spain_comm_NWNA
+1	100	1.5	6	# 6 - Spain_comm_SWNA
+1	100	1.5	6	# 7 - Spain_comm_NENA
+1	100	1.5	6	# 8 - Spain_comm_SENA
+1	100	1.5	6	# 9 - Spain_comm_MED
+1	100	1.5	6	# 10 - Japan_comm_NWNA
+1	100	1.5	6	# 11 - Japan_comm_SWNA
+1	100	1.5	6	# 12 - Japan_comm_NENA
+1	100	1.5	6	# 13 - Japan_comm_SENA
+1	100	1.5	6	# 14 - Japan_comm_MED
+1	100	1.5	6	# 15 - Portugal_comm_NWNA
+1	100	1.5	6	# 16 - Portugal_comm_NENA
+1	100	1.5	6	# 17 - Venezuela_comm_SWNA
+1	100	1.5	6	# 18 - Venezuela_comm_SENA
+1	100	1.5	6	# 19 - US_sci - NWNA
+1	100	1.5	6	# 20 - Pooled_sport_SWNA
+1	100	1.5	6	# 21 - Pooled_sport_NENA
+1	100	1.5	6	# 22 - Pooled_sport_MED
+1	100	1.5	6	# 23 - Pooled_comm_NWNA
+1	100	1.5	6	# 24 - Pooled_comm_SWNA
+1	100	1.5	6	# 25 - Pooled_comm_NENA
+1	100	1.5	6	# 26 - Pooled_comm_SENA
+1	100	1.5	6	# 27 - Pooled_comm_MED
+
+# Tau (overdispersion) controls - Hypothesis 3				
+# LO HI INIT PHASE				
+1	100	1.5	6	# 1
+1	100	1.5	6	# 2
+1	100	1.5	6	# 3
+1	100	1.5	6	# 4
+1	100	1.5	6	# 5
+1	100	1.5	6	# 6
+1	100	1.5	6	# 7
+1	100	1.5	6	# 8
+1	100	1.5	6	# 9
+1	100	1.5	6	# 10
+1	100	1.5	6	# 11
+1	100	1.5	6	# 12
+1	100	1.5	6	# 13
+1	100	1.5	6	# 14
+1	100	1.5	6	# 15
+1	100	1.5	6	# 16
+
+# Tau (overdispersion) controls - Hypothesis 4				
+# LO HI INIT PHASE				
+1	100	1.5	6	# 1
+1	100	1.5	6	# 2
+1	100	1.5	6	# 3
