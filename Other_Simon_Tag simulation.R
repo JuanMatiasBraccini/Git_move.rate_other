@@ -1,5 +1,6 @@
 ## 2 regions, 6 timestpes
-obs_dat <- read.csv('C:/Matias/Analyses/Movement rate estimation/Simon/deeptags.csv')
+handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
+obs_dat <- read.csv(handl_OneDrive('Analyses/Movement rate estimation/Simon/deeptags.csv'))
 windows.options(record=T, restoreConsole=T)
 Lambda <- 0.58                       # Tag reporting rate
 ## Phi these values match the rate of decline shown in Kims tank trials

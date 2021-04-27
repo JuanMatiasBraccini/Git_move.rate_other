@@ -5,7 +5,9 @@
 
 
 library(expm)
-setwd("C:/Matias/Analyses/Movement rate estimation/Gummy and whiskery/Gummy/Individual based model")
+handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
+
+setwd(handl_OneDrive("Analyses/Movement rate estimation/Gummy and whiskery/Gummy/Individual based model"))
 Dummy.dat=read.csv("Conv.tg.rec.exp.csv")
 
 #Check prop stay prop leave

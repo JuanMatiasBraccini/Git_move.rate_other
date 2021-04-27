@@ -9,7 +9,8 @@ rm(list=ls(all=TRUE))
 
 
 # EFFORT DATA
-Effort.zn=read.csv("C:/Matias/Data/Population dynamics/Data inputs for models/Gummy/2016/effort.annual.by.zone.TDGDLF.csv")
+handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
+Effort.zn=read.csv(handl_OneDrive("Data/Population dynamics/Data inputs for models/Gummy/2016/effort.annual.by.zone.TDGDLF.csv"))
 
 Effort.zn=rbind(Effort.zn,Effort.zn[nrow(Effort.zn),])   #add dummy 2014 effort  
 Effort.zn$FINYEAR=as.numeric(substr(Effort.zn$FINYEAR,1,4))
@@ -19,7 +20,7 @@ Effort.zn$FINYEAR[nrow(Effort.zn)]=2014
 
 
 # TAGGING DATA
-hndl="C:/Matias/Data/Tagging/Pop dyn model/Conventional/"
+hndl=handl_OneDrive("Data/Tagging/Pop dyn model/Conventional/")
 
 #at Size
   #dusky
