@@ -1,5 +1,6 @@
 ## 2 regions, 6 timestpes
-handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
+if(!exists('handl_OneDrive')) source('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/SOURCE_SCRIPTS/Git_other/handl_OneDrive.R')
+
 obs_dat <- read.csv(handl_OneDrive('Analyses/Movement rate estimation/Simon/deeptags.csv'))
 windows.options(record=T, restoreConsole=T)
 Lambda <- 0.58                       # Tag reporting rate

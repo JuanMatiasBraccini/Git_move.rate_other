@@ -5,7 +5,7 @@
 
 
 library(expm)
-handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
+if(!exists('handl_OneDrive')) source('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/SOURCE_SCRIPTS/Git_other/handl_OneDrive.R')
 
 setwd(handl_OneDrive("Analyses/Movement rate estimation/Gummy and whiskery/Gummy/Individual based model"))
 Dummy.dat=read.csv("Conv.tg.rec.exp.csv")
